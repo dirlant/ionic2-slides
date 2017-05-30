@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides #carousel pager>
+    <ion-slide *ngFor="let slide of slides">
+      <img [src]="slide.imagen">
+      <h3>{{slide.titulo}}</h3>
+      <p>{{slide.texto}}</p>
+    </ion-slide>    
+  </ion-slides>
+  
+  <button ion-button (click)="anterior()" *ngIf="!carousel.isBeginning()"> Ant.</button>
+  <button ion-button (click)="siguiente()" > Sig.</button>
+  <button ion-button (click)="volver()" > Start</button>
+</ion-content>
